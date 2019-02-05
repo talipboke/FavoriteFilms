@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import Alamofire
+
+internal protocol APIConfiguration{
+    var method: HTTPMethod { get }
+    var url: URL { get }
+    var parameters: Parameters? { get }
+    var encoding: ParameterEncoding { get }
+    var headers: HTTPHeaders { get }
+}

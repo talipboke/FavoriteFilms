@@ -8,14 +8,28 @@
 
 import UIKit
 
-
-class LauncherVC: UIViewController {
+class LauncherVC: BaseVC<LauncherView> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.checkInternetConnection()
+
     }
+    private func checkInternetConnection(){
+        ConnectionManager.isConnectedToInternet ? goToHomePage() : createAlert(title: AppConstant.notice, message: AppConstant.internetError)
+    }
+    private func goToHomePage(){
+        
+        FireBaseManager.setupRemoteConfigDefaults()
+        FireBaseManager.fetchRemoteConfig { [unowned self] (companyName) in
+            self.castedView.companylbl.text = companyName
+            
+            self.delay(AppConstant.delayTime) {
+                self.present(targetVC: HomeNavigationController(), animated: true)
+            }
+        }
 
-
+    }
+    
 }
 

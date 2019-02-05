@@ -7,7 +7,20 @@
 		<key>FavoriteFilms.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>0</integer>
+			<integer>12</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>CB0BC95F2208B40700031887</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CB0BC9732208B40800031887</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

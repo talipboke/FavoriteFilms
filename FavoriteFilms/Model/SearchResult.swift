@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+struct SearchResult : Codable{
+    let isSuccess : String
+    let error : String?
+    
+    let films : [Film]?
+    
+    enum CodingKeys : String,CodingKey{
+        case isSuccess = "Response"
+        case error = "Error"
+        case films = "Search"
+    }
+}

@@ -6,4 +6,9 @@
 //  Copyright © 2019 Talip. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class HomeView : UIView{
+    @IBOutlet weak var searchBar : UISearchBar!
+    @IBOutlet weak var table : UITableView!
+}

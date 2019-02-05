@@ -6,4 +6,9 @@
 //  Copyright © 2019 Talip. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class DetailVM : BaseVM{
+    public var selectedFilm = Film()
+    
+}

@@ -20,8 +20,9 @@ class BaseVC<V : UIView>: UIViewController {
         return view as? V //as! V
     }
     
+    private let disposeBag = DisposeBag()
     private let tapGestureRecognizer = UITapGestureRecognizer()
-    internal let disposeBag = DisposeBag()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

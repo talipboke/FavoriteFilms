@@ -6,4 +6,8 @@
 //  Copyright © 2019 Talip. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+class APIConstant{
+    public static let baseUrl = "https://www.omdbapi.com"
+}

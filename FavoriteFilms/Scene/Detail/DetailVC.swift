@@ -7,24 +7,30 @@
 //
 
 import UIKit
+import Kingfisher
 
-class DetailVC: UIViewController {
+class DetailVC: BaseVC<DetailView> {
 
+    let viewModel = DetailVM()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        FireBaseManager.logToAnalytics(name: AppConstant.lastOpenedFilmDetail, parameters: try! viewModel.selectedFilm.asDictionary())
+        
+        renderUI()
     }
+    private func renderUI(){
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let film = viewModel.selectedFilm
+        
+        
+        HudHelper.shared.showHud()
+        castedView.filmImg.kf.setImage(with: URL(string: film.posterPath)) { [unowned self] (image, error, cache, url) in
+            self.castedView.filmTitleLbl.text = film.title + " - " + film.year + " - " + film.type
+            HudHelper.shared.hideHud()
+        }
+        
     }
-    */
 
 }

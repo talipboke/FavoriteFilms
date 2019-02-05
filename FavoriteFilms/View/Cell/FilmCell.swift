@@ -10,6 +10,8 @@ import UIKit
 
 class FilmCell: UITableViewCell {
 
+    @IBOutlet weak var filmAndYearLbl: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
